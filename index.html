@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/public/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{product}}</h2>
+      <div>
+        <p>from Rs. 500 000...</p>
+      </div>
+      <div class="container">
+        <div class="img-container">
+            <img :src="images.src" alt="product-image" :sizes="images.size" srcset="">
+        </div>
+        <div>
+            <h3>Model. Which one is best for you</h3>
+            <small v-if="inventory > 10">In stock</small>
+            <small v-else>Only {{inventory}} items remaining</small>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./public/main.js"></script>
+    <script defer>
+      const mountApp = app.mount("#app");
+    </script>
+  </body>
+</html>
