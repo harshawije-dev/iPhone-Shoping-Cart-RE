@@ -8,18 +8,76 @@
   </head>
   <body>
     <div id="app">
-      <h2>{{product}}</h2>
+      <div class="fixed">
+        <div class="w-100 flex-justify">
+          <h2>{{product}}</h2>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <p>cart</p>
+            <span v-show="cart">({{cart}})</span>
+          </div>
+        </div>
+      </div>
       <div>
         <p>from Rs. 500 000...</p>
+      </div>
+      <div>
+        <small v-if="inventory > 10">In stock</small>
+        <small v-else-if>Only {{inventory}} items remaining</small>
+        <small v-else>Out of Stock</small>
       </div>
       <div class="container">
         <div class="img-container">
             <img :src="images.src" alt="product-image" :sizes="images.size" srcset="">
         </div>
-        <div>
+        <div class="conatiner-col">
+          <div>
             <h3>Model. Which one is best for you</h3>
-            <small v-if="inventory > 10">In stock</small>
-            <small v-else>Only {{inventory}} items remaining</small>
+            <br>
+            <ul class="li-model">
+              <li v-for="item in details" :id="item.key" class="li-item">
+                <section class="block">
+                  <div>
+                    <h3>{{item.title}}</h3>
+                    <small>{{item.baseSpec}}</small>
+                  </div>
+                  <div>
+                    <p>{{item.price}}</p>
+                  </div>
+                </section>
+              </li>
+            </ul>
+      </div>
+        <br>
+      <div>
+        <h3>Finish. Pick your favourite</h3>
+        <div>
+          <h5>Color - <span v-show>{{varientText}}</span></h5>
+          <div class="flex-slider">
+            <button v-for="(varient, index) in varients" :key="index">{{varient}}</button>
+          </div>
+        </div>
+      </div>
+        <br>
+      <div>
+        <h3>Storage. How much space you need?</h3>
+        <div>
+          <ul class="li-model">
+            <li v-for="item in storage" :id="item.key" class="li-item">
+              <section class="block">
+                <div>
+                  <h3>{{item.title}}</h3>
+                </div>
+                <div>
+                  <p>{{item.price}}</p>
+                </div>
+              </section>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="my-10 row-center">
+        <button type="button" class="btn btn-primary" v-on:click="addToCart">add to cart</button>
+      </div>
       </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

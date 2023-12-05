@@ -1,5 +1,12 @@
+body{
+    margin: 0;
+}
 img {
     max-width: 89.999%;
+}
+
+h2{
+    margin: 0;
 }
 
 .img-container {
@@ -16,4 +23,65 @@ img {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    margin-top: 3.5rem;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.block {
+    display: flex;
+    border: 1px solid;
+    margin-top: 20px;
+    padding: 12px 15px;
+    border-radius: 10px;
+}
+
+.li-model {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.conatiner-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-slider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px; 
+}
+.my-10 {
+    margin: 2rem 0rem;
+}
+.row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex-justify {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.px-3{
+    padding: 0 1.5rem;
+}
+.w-100 {
+    width: 100%;
+    max-width: 99%;
+}
+
+.fixed{
+    position: fixed;
+    width: 100%;
+    max-height: 5em;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background-color: white;
 }
